@@ -1,19 +1,20 @@
 <head>
-  <title>simple-todos2</title>
+    <title>Todos</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  <!-- {{> nw}} -->
+    <div id="container">
+        <header>
+            <h1>Yo Dos</h1>
+        </header>
+        <ul>
+            {{#each tasks}}
+            {{task}}
+            {{/each}}
+        </ul>
+    </div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="task">
+    <li>{{text}}</li>
 </template>
-<!-- <template name="nw">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template> -->
