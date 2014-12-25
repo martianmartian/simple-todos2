@@ -1,7 +1,7 @@
 if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault("counter", 0);
-
+  // === Get from DATABASE, DISPLAY 
   Template.hello.helpers({
     counter: function () {
       return Session.get("counter");
@@ -12,7 +12,10 @@ if (Meteor.isClient) {
       return Session.get("counter");
     }
   });
-  // ==== EVENTS
+
+
+
+  // ==== EVENTS, SET value to DATABASE
   Template.hello.events({
     'click button': function () {
       // increment the counter when button is clicked
