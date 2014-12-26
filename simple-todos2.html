@@ -1,20 +1,21 @@
 <head>
-    <title>Todos</title>
+  <title>Todo List</title>
 </head>
 
 <body>
-    <div id="container">
-        <header>
-            <h1>Yo Dos</h1>
-        </header>
-        <ul>
-            {{#each tasks}}
-            {{task}}
-            {{/each}}
-        </ul>
-    </div>
+  <div class="container">
+    <header>
+      <h1>Todo List</h1>
+    </header>
+
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
 </body>
 
 <template name="task">
-    <li>{{text}}</li>
+  <li>{{text}}</li>
 </template>
