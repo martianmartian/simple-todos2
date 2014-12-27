@@ -1,7 +1,9 @@
 Tasks = new Mongo.Collection("tasks");
 
-if (Meteor.isClient){
 
+//====== fr client
+if (Meteor.isClient){
+  Meteor.subscribe("tasks");
   Template.body.helpers({
     tasks:function(){
       if(Session.get("hideCompleted")){
@@ -47,6 +49,7 @@ if (Meteor.isClient){
   })
 }
 
+// ===== methods are for securing things
 
 Meteor.methods({
   addTask: function(text){
@@ -70,8 +73,13 @@ Meteor.methods({
 });
 
 
+//========= for server
 
-
+if(Meteor.isServer){
+  Meteor.publish("tasks",function(){
+    return Tasks.find();
+  });
+}
 
 
 
